@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1ec">
+  <meta name="description" content="Kitchenette — мастерская корпусной мебели. Кухни, шкафы и системы хранения по вашим размерам. Напишите нам в Telegram.">
+  <title>Kitchenette — корпусная мебель на заказ</title>
+  <style>
+    :root { --paper:#f4f1ec; --ink:#262725; --muted:#686964; --line:#d8d7d0; --slate:#5e5e5e; --sage:#adb3a5; }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased }
+    a { color:inherit; text-decoration:none }
+    img { display:block; max-width:100% }
+    .wrap { width:min(1280px,calc(100% - 72px)); margin:auto }
+    .top { border-bottom:1px solid var(--line); }
+    .top-inner { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:28px }
+    .brand { display:flex; align-items:center; gap:13px; font-weight:700; letter-spacing:-.04em; font-size:24px }
+    .brand-mark { width:39px; height:39px; overflow:hidden; background:var(--slate); border-radius:3px; position:relative }
+    .brand-mark img { width:39px; height:39px; object-fit:cover }
+    .top nav { display:flex; gap:34px; font-size:13px; color:#555752 }
+    .top nav a:hover, .footer a:hover { text-decoration:underline; text-underline-offset:4px }
+    .top-cta { border:1px solid var(--ink); padding:12px 19px; border-radius:3px; font-size:13px; font-weight:700; white-space:nowrap; transition:background .2s,color .2s }
+    .top-cta:hover { background:var(--ink); color:white }
+    .hero { padding:34px 0 0 }
+    .hero-grid { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1.04fr); min-height:640px }
+    .hero-copy { padding:76px 8% 60px 0; display:flex; flex-direction:column; align-items:flex-start }
+    .eyebrow { font-size:12px; letter-spacing:.19em; text-transform:uppercase; font-weight:700; color:#747771; display:flex; align-items:center; gap:12px }
+    .eyebrow:before { content:""; width:24px; height:1px; background:currentColor }
+    h1 { font-family:Georgia,'Times New Roman',serif; font-weight:400; font-size:clamp(50px,5.8vw,91px); line-height:1.02; letter-spacing:-.065em; margin:48px 0 30px; max-width:680px }
+    .intro { max-width:470px; color:#5b5d58; font-size:17px; line-height:1.65; margin:0 0 35px }
+    .main-cta { display:inline-flex; align-items:center; justify-content:space-between; gap:30px; min-height:56px; background:var(--ink); color:#fff; padding:0 20px 0 22px; border-radius:3px; font-size:14px; font-weight:700; transition:transform .2s,background .2s }
+    .main-cta:hover { transform:translateY(-2px); background:#454642 }
+    .main-cta span { font-size:21px; font-weight:400; line-height:1 }
+    .subline { color:#858780; font-size:12px; margin-top:auto; padding-top:45px; letter-spacing:.03em }
+    .hero-art { min-height:640px; background:#d9d7cd; position:relative; overflow:hidden; isolation:isolate }
+    .hero-art svg { width:100%; height:100%; position:absolute; inset:0; object-fit:cover }
+    .art-tag { position:absolute; z-index:2; right:23px; bottom:23px; background:rgba(248,246,240,.93); padding:13px 17px; font-size:11px; text-transform:uppercase; letter-spacing:.12em }
+    .bar { background:var(--ink); color:white; padding:30px 0; margin-top:0 }
+    .bar-inner { display:flex; align-items:center; justify-content:space-between; gap:30px }
+    .bar p { margin:0; font-family:Georgia,serif; font-size:clamp(20px,2.4vw,30px); line-height:1.25 }
+    .bar a { display:inline-flex; gap:14px; align-items:center; white-space:nowrap; font-size:13px; border-bottom:1px solid #868984; padding-bottom:5px }
+    .section { padding:112px 0 }
+    .section-heading { display:grid; grid-template-columns: 1fr 1fr; gap:50px; align-items:end; margin-bottom:52px }
+    .kicker { color:#777a72; text-transform:uppercase; letter-spacing:.18em; font-size:11px; font-weight:700; margin:0 0 23px }
+    h2 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(42px,4.2vw,64px); font-weight:400; line-height:1.06; letter-spacing:-.055em; margin:0 }
+    .section-heading > p { color:var(--muted); max-width:420px; line-height:1.7; font-size:16px; margin:0 0 4px auto }
+    .services { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line) }
+    .service { padding:29px 30px 36px 0; min-height:210px }
+    .service + .service { border-left:1px solid var(--line); padding-left:30px }
+    .service .num { font-size:12px; color:#8b8d86 }
+    .service h3 { font-family:Georgia,serif; font-weight:400; font-size:33px; margin:26px 0 10px; letter-spacing:-.045em }
+    .service p { margin:0; color:var(--muted); line-height:1.6; font-size:14px; max-width:310px }
+    .feature { background:#e6e6dc; padding:88px 0 }
+    .feature-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:8%; align-items:center }
+    .feature-logo { background:var(--slate); aspect-ratio:1.25; display:flex; justify-content:center; align-items:center; overflow:hidden; box-shadow:20px 20px 0 rgba(58,61,55,.1) }
+    .feature-logo img { width:min(92%,520px); mix-blend-mode:normal }
+    .feature h2 { max-width:580px }
+    .feature p:not(.kicker) { max-width:540px; font-size:16px; line-height:1.75; color:#585b55; margin:25px 0 0 }
+    .contact { padding:120px 0 130px; text-align:center }
+    .contact .kicker { margin-bottom:24px }
+    .contact h2 { max-width:820px; margin:0 auto 24px }
+    .contact p:not(.kicker) { max-width:500px; margin:0 auto 30px; color:var(--muted); line-height:1.65 }
+    .footer { border-top:1px solid var(--line); padding:30px 0; font-size:13px; color:#777970 }
+    .footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap }
+    :focus-visible { outline:3px solid #6d8d72; outline-offset:4px }
+    @media(max-width:900px) { .wrap{width:min(100% - 40px,700px)} .top nav{display:none} .hero-grid{grid-template-columns:1fr} .hero-copy{padding:60px 0 55px;min-height:520px} .hero-art{min-height:500px} .section-heading,.feature-grid{grid-template-columns:1fr;gap:35px} .section-heading>p{margin:0} .feature-logo{max-width:540px} }
+    @media(max-width:600px) { .wrap{width:calc(100% - 36px)} .top-inner{min-height:70px}.brand{font-size:21px}.brand-mark{width:33px;height:33px}.top-cta{font-size:11px;padding:10px}.hero{padding-top:0}.hero-copy{min-height:0;padding:53px 0 57px}h1{margin:35px 0 23px;font-size:clamp(47px,13vw,70px)}.intro{font-size:15px}.subline{padding-top:55px}.hero-art{min-height:390px}.bar-inner{align-items:flex-start;flex-direction:column}.section{padding:75px 0}.section-heading{margin-bottom:30px}.services{grid-template-columns:1fr}.service,.service+.service{border-left:0;border-top:1px solid var(--line);padding:22px 0 28px;min-height:0}.service:first-child{border-top:0}.service h3{margin:15px 0 8px}.feature{padding:70px 0}.feature-logo{aspect-ratio:1.15}.contact{padding:85px 0 95px}.footer .wrap{flex-direction:column} }
+    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *{transition:none!important} }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#top" aria-label="Kitchenette, наверх"><span class="brand-mark" aria-hidden="true"><img src="logo.png" alt=""></span>kitchenette</a>
+      <nav aria-label="Навигация"><a href="#products">Что делаем</a><a href="#about">О мастерской</a><a href="#contact">Контакты</a></nav>
+      <a class="top-cta" href="https://t.me/kitchenette_tg" target="_blank" rel="noopener noreferrer">Написать нам →</a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Мастерская корпусной мебели</div>
+          <h1 id="hero-title">Мебель для вашей жизни и вашего пространства.</h1>
+          <p class="intro">Кухни, шкафы и системы хранения на заказ. Обсудим вашу идею и подберём решение под размеры помещения и привычный ритм жизни.</p>
+          <a class="main-cta" href="https://t.me/kitchenette_tg" target="_blank" rel="noopener noreferrer">Обсудить проект <span aria-hidden="true">→</span></a>
+          <div class="subline">KITCHENETTE / МЕБЕЛЬ НА ЗАКАЗ</div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Стилизованная иллюстрация светлой кухни с деревянными фасадами">
+          <svg viewBox="0 0 680 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#ecebe3"/><stop offset="1" stop-color="#d2d0c5"/></linearGradient><linearGradient id="wood" x2="1" y2=".25"><stop stop-color="#a69a83"/><stop offset=".55" stop-color="#c5b69c"/><stop offset="1" stop-color="#9f947e"/></linearGradient><linearGradient id="floor" x2="0" y2="1"><stop stop-color="#b3afa2"/><stop offset="1" stop-color="#8f8d81"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="22"/></filter></defs>
+            <rect width="680" height="720" fill="url(#wall)"/><path d="M0 568L680 520V720H0Z" fill="url(#floor)"/><path d="M0 570L680 522" stroke="#77786f" stroke-width="3" opacity=".3"/>
+            <rect x="57" y="68" width="440" height="346" fill="#dddcd2" stroke="#c4c3b8" stroke-width="6"/><rect x="76" y="88" width="399" height="305" fill="#d1d6cf"/><path d="M76 330C172 283 249 322 314 268S431 270 475 240V393H76Z" fill="#a8b0a2"/><path d="M76 348C183 320 232 355 313 312S431 316 475 284V393H76Z" fill="#929e91"/><path d="M270 88V393M76 266H475" stroke="#e6e4dc" stroke-width="11"/>
+            <path d="M0 270H83V484H0ZM483 270H680V484H483Z" fill="#e3dfd3"/><path d="M0 271H82M485 271H680" stroke="#c5c1b4" stroke-width="5"/>
+            <path d="M0 378H680V409H0Z" fill="#d8d1bf"/><path d="M0 409H680V555H0Z" fill="url(#wood)"/><path d="M127 409V555M295 409V555M469 409V555" stroke="#786f60" stroke-width="3" opacity=".65"/><path d="M36 426V528M161 426V528M328 426V528M502 426V528" stroke="#e1d5c0" stroke-width="2" opacity=".35"/>
+            <path d="M0 392H680V411H0Z" fill="#eae7db"/><path d="M0 411H680" stroke="#a9a89c" stroke-width="4"/>
+            <ellipse cx="460" cy="616" rx="198" ry="35" fill="#403e37" opacity=".22" filter="url(#shadow)"/><path d="M323 518L573 495L676 525L412 557Z" fill="#d2ccbd"/><path d="M412 557L676 525V567L412 598Z" fill="#9d927d"/><path d="M323 518L412 557V598L323 558Z" fill="#b0a48e"/><path d="M359 576L348 720M627 575L639 720" stroke="#635f53" stroke-width="12"/><path d="M414 591L405 720M661 568L673 720" stroke="#635f53" stroke-width="10"/>
+            <path d="M430 496V460M421 461Q431 444 443 459" fill="none" stroke="#777f69" stroke-width="3"/><ellipse cx="430" cy="461" rx="15" ry="7" fill="#6d7760"/><path d="M448 482V466M444 469Q450 458 456 468" fill="none" stroke="#777f69" stroke-width="2"/><ellipse cx="450" cy="469" rx="9" ry="5" fill="#849077"/>
+            <path d="M558 366V395M534 395H583" stroke="#52584f" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M533 398C543 390 565 390 584 398" stroke="#73776a" stroke-width="4" fill="none"/>
+            <path d="M104 0V93M93 91H115M395 0V78M382 78H409" stroke="#454943" stroke-width="4" fill="none"/><path d="M75 92H134L125 110H83ZM361 78H432L419 101H375Z" fill="#dad7ca" stroke="#76796f" stroke-width="3"/>
+          </svg>
+          <div class="art-tag">Форма · Функция · Пространство</div>
+        </div>
+      </div>
+    </section>
+    <div class="bar"><div class="wrap bar-inner"><p>Место для всего важного. И для жизни вокруг.</p><a href="#products">Смотреть направления <span aria-hidden="true">↓</span></a></div></div>
+    <section id="products" class="section" aria-labelledby="products-title"><div class="wrap">
+      <div class="section-heading"><div><p class="kicker">01 / Что делаем</p><h2 id="products-title">Продуманная мебель для дома</h2></div><p>Начинаем с вашего пространства и задач. Обсуждаем, что должно быть под рукой, где нужно больше места и какой характер хочется придать интерьеру.</p></div>
+      <div class="services"><article class="service"><span class="num">01</span><h3>Кухни</h3><p>Место, где удобно готовить, встречаться и проводить время вместе.</p></article><article class="service"><span class="num">02</span><h3>Шкафы</h3><p>Хранение под размеры комнаты и нужный вам набор вещей.</p></article><article class="service"><span class="num">03</span><h3>Гардеробные</h3><p>Порядок с понятной организацией внутри и спокойным видом снаружи.</p></article></div>
+    </div></section>
+    <section id="about" class="feature" aria-labelledby="about-title"><div class="wrap feature-grid"><div class="feature-logo"><img src="logo.png" alt="Логотип Kitchenette — мастерская корпусной мебели" loading="lazy"></div><div><p class="kicker">02 / О мастерской</p><h2 id="about-title">У каждого пространства свой характер.</h2><p>Kitchenette — мастерская корпусной мебели. Делаем мебель на заказ для кухонь и других зон дома. Расскажите, что хочется изменить в вашем пространстве: с этого и начнём разговор.</p></div></div></section>
+    <section id="contact" class="contact" aria-labelledby="contact-title"><div class="wrap"><p class="kicker">03 / Давайте знакомиться</p><h2 id="contact-title">Есть идея для вашего дома?</h2><p>Напишите нам в Telegram. Можно начать с пары слов о помещении и о том, какую мебель вы задумали.</p><a class="main-cta" href="https://t.me/kitchenette_tg" target="_blank" rel="noopener noreferrer">Написать в Telegram <span aria-hidden="true">→</span></a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>© Kitchenette</span><span>Мастерская корпусной мебели</span><a href="https://t.me/kitchenette_tg" target="_blank" rel="noopener noreferrer">Telegram →</a></div></footer>
+</body>
+</html>
